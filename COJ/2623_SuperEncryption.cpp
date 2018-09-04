@@ -1,15 +1,26 @@
-//
-//  main.cpp
-//  COJ
-//
-//  Created by Erick González on 1/17/18.
-//  Copyright © 2018 Erick González. All rights reserved.
-//
-
 #include <iostream>
+#include <string>
 
-int main(int argc, const char * argv[]) {
-    // insert code here...
-    std::cout << "Hello, World!\n";
+using namespace std;
+
+void dencrypt(string sWord)
+{
+    int n = sWord.length()/2;
+    string sWordFirst = sWord.substr(0,n);
+    string sWordSecond = sWord.substr(n,sWord.length());
+    
+    for (int i=n-1; i >=0; i--)
+        cout << sWordFirst[i];
+    
+    for (int i=n; i >=0; i--)
+        cout << sWordSecond[i];
+    cout<<endl;
+}
+
+int main() {
+    
+    string input;
+    cin>>input;
+    dencrypt(input);
     return 0;
 }
